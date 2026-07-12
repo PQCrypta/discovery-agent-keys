@@ -26,3 +26,22 @@ sha256sum pqcrypta-agent-signing.pub   # must equal the Ed25519 fingerprint abov
 The public keys themselves are committed here alongside their fingerprints. Full
 verification instructions (classical + post-quantum, Linux/macOS/Windows) are in the
 agent's [Complete Guide](https://pqcrypta.com/discovery/guide.php#verify).
+
+## Independent trust anchors
+
+These fingerprints are published on three separate origins — trust them only if all agree:
+
+1. **This repository** (github.com, third-party hosted).
+2. **The documentation page** — https://pqcrypta.com/discovery/guide.php#verify (served from `pqcrypta.com`, a different origin than the `api.pqcrypta.com` that serves the binaries).
+3. **A DNSSEC-signed DNS TXT record** on `_pqcrypta-signing.pqcrypta.com`. The `pqcrypta.com` zone is DNSSEC-signed (DS present in the `.com` root), so this record is cryptographically authenticated end-to-end:
+
+   ```bash
+   delv TXT _pqcrypta-signing.pqcrypta.com   # expect: "fully validated"
+   ```
+
+## Release history
+
+Every release's signed `SHA256SUMS` (Ed25519 + ML-DSA-65) is committed under
+[`releases/`](releases/) — an append-only, third-party-hosted record of exactly
+what was shipped and when. A compromised distribution origin cannot rewrite this past.
+See [RELEASES.md](RELEASES.md).
