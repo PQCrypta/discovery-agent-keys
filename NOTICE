@@ -1,0 +1,6 @@
+PQCrypta Discovery Agent — Signing Keys and Release Manifest History
+Copyright 2026 PQCrypta
+
+This repository (public keys, fingerprints, and signed release manifests) is licensed
+under the Apache License, Version 2.0. The cryptographic public keys it contains are,
+by nature, intended for free distribution and verification use.
