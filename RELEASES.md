@@ -2,6 +2,7 @@
 
 Append-only record of each release's signed SHA256SUMS (Ed25519 + ML-DSA-65).
 
+- `releases/2026-08-15-v1.0.38/`
 - `releases/2026-08-14-v1.0.37/`
 - `releases/2026-08-14-v1.0.36/`
 - `releases/2026-08-14-v1.0.35/`
